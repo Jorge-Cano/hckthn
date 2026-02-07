@@ -1,6 +1,6 @@
 # hckthn
 activation streams, session summary api, guides and surveys
-
+```mermaid
 sequenceDiagram
     participant Web as GitHub Hosted Website
     participant FS as Fullstory
