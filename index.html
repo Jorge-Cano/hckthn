@@ -164,6 +164,12 @@
         </div>
     </div>
 
+    <!-- UI update from GCP Function -->
+    <div id="fs-alert-box" style="display:none; position:fixed; bottom:20px; right:20px; background:#fff; border:1px solid #ddd; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); z-index:9999; border-radius:8px; max-width:300px;">
+        <p id="fs-alert-text"></p>
+        <button onclick="document.getElementById('fs-alert-box').style.display='none'">Dismiss</button>
+    </div>    
+
     <script>
         const userState = { id: "VIP-9921", name: "Alexander Sterling", tier: "Private Client", propensity: 0.94, finInv: 0, casSpent: 0, casWon: 0, spins: 0, hesitations: 0, searchClicks: 0, searches: 0 };
         let hoverTimer;
@@ -268,6 +274,36 @@
             r.dataset.apiHostname = "https://guides.fullstory.com";
             a.appendChild(r);
             })(window, document, "https://guides.fullstory.com/dist/gs.js");
-    </script>    
+    </script>
+
+    <!-- GCP polling - to be activated once published -->
+    <!-- <script>
+      // This waits for Fullstory to be ready
+      window['_fs_ready'] = function() {
+        const sessionId = FS.getCurrentSession();
+        const bucketUrl = "https://storage.googleapis.com/your-public-ui-bucket";
+    
+        // Start checking for a message every 5 seconds
+        const pollInterval = setInterval(async () => {
+          try {
+            const response = await fetch(`${bucketUrl}/${sessionId}.json`);
+            
+            if (response.ok) {
+              const data = await response.json();
+              if (data.show) {
+                document.getElementById('fs-alert-text').innerText = data.text;
+                document.getElementById('fs-alert-box').style.display = 'block';
+                
+                // Stop polling once we've shown the message
+                clearInterval(pollInterval);
+              }
+            }
+          } catch (e) {
+            // File doesn't exist yet, which is normal
+          }
+        }, 5000);
+      };
+    </script> -->
+    
 </body>
 </html>
