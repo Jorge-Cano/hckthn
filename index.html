@@ -279,7 +279,8 @@
     })(window, document, "https://guides.fullstory.com/dist/gs.js");
   </script> -->
 <!-- Script end -->
-    <script>
+    
+    <!-- <script>
         (function (w, d, s) {
             var a = d.getElementsByTagName('head')[0];
             var r = d.createElement('script');
@@ -290,7 +291,23 @@
             r.dataset.apiHostname = "https://guides.fullstory.com";
             a.appendChild(r);
             })(window, document, "https://guides.fullstory.com/dist/gs.js");
-    </script>
+    </script> -->
+
+    <script>
+      window['_fs_ready'] = function() {
+        // Only load Guides once FullStory has confirmed it is ready and recording
+        (function (w, d, s) {
+            var a = d.getElementsByTagName('head')[0];
+            var r = d.createElement('script');
+            r.async = 1;
+            r.src = s;
+            r.setAttribute('id', 'usetifulScript');
+            r.dataset.token = "0d98c945cb27c8a94f8752d06a21a809";
+            r.dataset.apiHostname = "https://guides.fullstory.com";
+            a.appendChild(r);
+        })(window, document, "https://guides.fullstory.com/dist/gs.js");
+      };
+    </script>    
 
     <!-- GCP polling - to be activated once published -->
     <!-- <script>
