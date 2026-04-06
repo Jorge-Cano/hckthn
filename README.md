@@ -13,7 +13,7 @@ sequenceDiagram
     par UI Update
         FS-->>Web: Guides "Contact You Soon" Modal
     end
-    GCF->>SMTP/SMS: SMTP/SMS Customer Communication
+    GCF->>SMTP/SMS: SMTP/SMS Client
 
     Note over Web, FS: Path 2: Data Retrieval Flow
     Web->>FS: Query Session Summary API
