@@ -11,8 +11,8 @@ sequenceDiagram
     Web->>FS: Customer Event (Wire Transfer)
     FS-->>GCF: Activation Stream
     par UI Update
-        FS->>Web: (Guides) Trigger UI Change
     and Notification
+        FS->>Web: (Guides) Trigger UI Change
         GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
     end
 
