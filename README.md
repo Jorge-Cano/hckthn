@@ -5,7 +5,7 @@ sequenceDiagram
     participant Web as Website
     participant FS as Fullstory
     participant GCF as Google Cloud Function
-    participant SMTP/SMS Client as SMTP/SMS Client
+    participant SMTP/SMS as SMTP/SMS
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
@@ -13,7 +13,7 @@ sequenceDiagram
     par UI Update
         FS-->>Web: Guides "Contact You Soon" Modal
     end
-    GCF->>SMTP/SMS: SMTP/SMS Client
+    GCF->>SMTP/SMS: Email & Text Client
 
     Note over Web, FS: Path 2: Data Retrieval Flow
     Web->>FS: Query Session Summary API
