@@ -9,7 +9,7 @@ sequenceDiagram
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
-    par UI Update
+    par UI Update & Data Activation
         FS->>GCF: Activation Stream
         FS-->>Web: Guides "Contact You Soon" Modal
     end
