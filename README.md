@@ -11,9 +11,9 @@ sequenceDiagram
     Web->>FS: Customer Event (Wire Transfer)
     FS-->>GCF: Activation Stream
     par UI Update
-        FS->>Web: Guides
+        FS->>Web: Guides "Contact You Soon" Modal
     end
-    GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
+    GCF-->>SMTP/SMS: Trigger Activation SMTP/SMS
 
     Note over Web, FS: Path 2: Data Retrieval Flow
     Web->>FS: Query Session Summary API
