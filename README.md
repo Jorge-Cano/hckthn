@@ -13,7 +13,7 @@ sequenceDiagram
     par UI Update
         FS-->>Web: Guides "Contact You Soon" Modal
     end
-    GCF->>SMTP/SMS: Twilio
+    GCF->>SMTP/SMS: Customer Data & Notification
     SMTP/SMS->>Recipient: Email & Text Delivered
 
     Note over Web, FS: Path 2: Data Retrieval Flow
