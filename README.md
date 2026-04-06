@@ -5,7 +5,7 @@ sequenceDiagram
     participant Web as Website
     participant FS as Fullstory
     participant GCF as Google Cloud Function
-    participant SMTP/SMS as SMTP/SMS
+    participant SMTP/SMS Client as SMTP/SMS Client
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
