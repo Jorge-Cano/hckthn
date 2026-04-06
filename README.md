@@ -12,7 +12,6 @@ sequenceDiagram
     FS-->>GCF: Activation Stream
     par UI Update
         FS->>Web: (Guides) Trigger UI Change
-    and Notification
         GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
     end
 
