@@ -8,12 +8,12 @@ sequenceDiagram
     participant SMTP/SMS as SMTP/SMS
 
     Note over Web, FS: Path 1: Activation Flow
-    Web->>FS: Customer Event (Big Whale Action)
-    FS-->>GCF: Activation Streaming Webhook
+    Web->>FS: Customer Event (Wire Transfer)
+    FS-->>GCF: Activation Stream
     par UI Update
-        GCF->>Web: Trigger UI Change (via Socket/API)
+        FS->>Web: (Guides) Trigger UI Change
     and Notification
-        GCF->>Email: Trigger Activation Email
+        GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
     end
 
     Note over Web, FS: Path 2: Data Retrieval Flow
