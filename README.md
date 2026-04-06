@@ -9,8 +9,8 @@ sequenceDiagram
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
-    FS->>GCF: Activation Stream
     par UI Update
+        FS->>GCF: Activation Stream
         FS-->>Web: Guides "Contact You Soon" Modal
     end
     GCF->>Twilio: SMTP/SMS SDK
