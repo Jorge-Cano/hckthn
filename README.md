@@ -2,7 +2,7 @@
 activation streams, session summary api, guides and surveys
 ```mermaid
 sequenceDiagram
-    participant Web as GitHub Hosted Website
+    participant Web as Website
     participant FS as Fullstory
     participant GCF as Google Cloud Function
     participant SMTP/SMS as SMTP/SMS
