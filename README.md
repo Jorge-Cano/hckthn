@@ -5,7 +5,7 @@ sequenceDiagram
     participant Web as GitHub Hosted Website
     participant FS as Fullstory
     participant GCF as Google Cloud Function
-    participant Email as Email Service (SMTP/SendGrid)
+    participant SMTP/SMS as SMTP/SMS
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Big Whale Action)
