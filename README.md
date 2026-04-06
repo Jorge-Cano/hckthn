@@ -10,11 +10,10 @@ sequenceDiagram
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
     FS-->>GCF: Activation Stream
-    par 
+    par UI Update
         FS->>Web: (Guides) Trigger UI Change
-        UI Update
-        GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
     end
+    GCF->>SMTP/SMS: Trigger Activation SMTP/SMS
 
     Note over Web, FS: Path 2: Data Retrieval Flow
     Web->>FS: Query Session Summary API
