@@ -16,7 +16,7 @@ functions.http('fullstoryHandler', async (req, res) => {
         // 2. The Logic: Prepare the UI message
         const uiMessage = {
             show: true,
-            text: "Hey! We noticed your interest in a large donation. Please fill out our priority form!",
+            text: "Hey! We noticed your interest in a wire transfer. Click the verification link to begin!",
             timestamp: Date.now()
         };
 
