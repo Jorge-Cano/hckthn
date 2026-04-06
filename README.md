@@ -17,6 +17,8 @@ sequenceDiagram
     Twilio->>Recipient: Email & Text Delivered
 
     Note over Web, FS: Path 2: Data Retrieval Flow
-    Web->>FS: Query Session Summary API
-    FS-->>Web: Return Session Data
+    par UI Update
+        Web->>FS: Query Session Summary API
+        FS-->>Web: Return Session Data
+    end
     Web->>Web: Update UI with Session Insights
