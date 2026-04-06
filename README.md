@@ -6,6 +6,7 @@ sequenceDiagram
     participant FS as Fullstory
     participant GCF as Google Cloud Function
     participant SMTP/SMS as SMTP/SMS
+    participant Recipient as Recipient
 
     Note over Web, FS: Path 1: Activation Flow
     Web->>FS: Customer Event (Wire Transfer)
@@ -13,7 +14,8 @@ sequenceDiagram
     par UI Update
         FS-->>Web: Guides "Contact You Soon" Modal
     end
-    GCF->>SMTP/SMS: Email & Text Client
+    GCF->>SMTP/SMS: Twilio
+    SMTP/SMS--> Receipient: Email & Text Delivered
 
     Note over Web, FS: Path 2: Data Retrieval Flow
     Web->>FS: Query Session Summary API
